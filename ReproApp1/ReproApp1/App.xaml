@@ -1,0 +1,45 @@
+﻿<Application
+    x:Class="ReproApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ReproApp">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="local:ItemControl" >
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="local:ItemControl">
+                            <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+
+                                <StackPanel>
+                                    <TextBlock Text="{Binding String1}"/>
+                                    <TextBlock Text="{Binding String2}"/>
+                                    <TextBlock Text="{Binding String3}"/>
+                                    <TextBlock Text="{Binding String4}"/>
+                                    <TextBlock Text="{Binding String5}"/>
+
+                                    <StackPanel DataContext="{Binding SubItem}">
+                                        <TextBlock Text="{Binding String1}"/>
+                                        <TextBlock Text="{Binding String2}"/>
+                                        <TextBlock Text="{Binding String3}"/>
+                                        <TextBlock Text="{Binding String4}"/>
+                                        <TextBlock Text="{Binding String5}"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
